@@ -4,7 +4,7 @@
  "test": "node --test",
  "start": "NODE_ENV=production node src/app.js",
  "pack": "mkdir -p dist && cp -r src package.json dist/ && (cd dist && zip -
-r app.zip .)"
+         r app.zip .)"
  },
  "dependencies": { "express": "^4.19.2" },
  "devDependencies": { "supertest": "^7.0.0" }
