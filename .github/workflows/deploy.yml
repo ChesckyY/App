@@ -49,8 +49,8 @@ jobs:
             ts="$(date -u +%Y-%m-%dT%H-%M-%SZ)"
             mkdir -p "releases/$ts"
             unzip -o app.zip -d "releases/$ts"
-            cd "releases/$ts"
-            npm ci --omit=dev
+            cd "releases/$ts/app"
+            npm install --omit=dev
             ln -sfn "/srv/hello/releases/$ts" /srv/hello/current
             sudo systemctl restart hello
             curl -fsS http://localhost:3000/health || (sudo journalctl -u hello -n 200 --no-pager; exit 1)
